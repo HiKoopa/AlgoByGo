@@ -69,16 +69,21 @@ func main() {
 */
 //5
 func main() {
-	mymap := make(map[int]int)
+	var sum, max int
+	//mymap := make(map[int]int)
 	r := bufio.NewScanner(os.Stdin)
 	w := bufio.NewWriter(os.Stdout)
 	r.Split(bufio.ScanWords)
-	for i := 0; i < 10; i++ {
+	r.Scan()
+	len, _:= strconv.Atoi(r.Text())
+	for i:=0; i < len; i++ {
 		r.Scan()
 		a, _:= strconv.Atoi(r.Text())
-		mymap[a % 42] = 1
+		if max < a {
+			max = a
+		}
+		sum = sum + a
 	}
-
-	fmt.Fprintf(w, "%d\n", len(mymap))
+	fmt.Fprintf(w, "%f\n", float32(sum) / float32(len) / float32(max) * 100.0)
 	w.Flush()
 }

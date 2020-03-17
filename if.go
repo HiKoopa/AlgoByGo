@@ -83,6 +83,31 @@ func main() {
 	fmt.Println(min1 + min2 - 50)
 }
 */
+/*
+//4 - 14681
+func main() {
+	var num1, num2, ret int
+	fmt.Scanf("%d", &num1)
+	fmt.Scanf("%d", &num2)
+
+	if num1 > 0 {
+		if num2 > 0 {
+			ret = 1
+		} else {
+			ret = 4
+		}
+	} else {
+		if num2 > 0 {
+			ret = 2
+		} else {
+			ret = 3
+		}
+	}
+
+	fmt.Println(ret)
+}
+*/
+/*
 //5
 func main() {
 	var num1, num2, num3, mid int
@@ -111,4 +136,22 @@ func main() {
 	}
 
 	fmt.Println(mid)
+}
+*/
+//5 - 2884
+func main() {
+	var num1, num2 int
+	fmt.Scanf("%d %d", &num1, &num2)
+
+	num2 = num2 - 45
+
+	if num2 < 0 {
+		num2 = num2 + 60
+		num1 = num1 - 1
+		if num1 < 0 {
+			num1 = num1 + 24
+		}
+	}
+
+	fmt.Printf("%d %d\n", num1, num2)
 }

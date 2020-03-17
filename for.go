@@ -1,7 +1,10 @@
 package main
 
 import "fmt"
-import "io"
+import "bufio"
+import "strconv"
+import "os"
+//import "io"
 
 /*
 //1
@@ -24,27 +27,24 @@ func main() {
 	}
 }
 */
-/*
+
 //4
-//FAIL
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 	writer := bufio.NewWriter(os.Stdout)
 	scanner.Split(bufio.ScanWords)
 	scanner.Scan()
 	n, _ := strconv.Atoi(scanner.Text())
-	fmt.Println(n)
 	for i := 0; i < n; i++ {
 		scanner.Scan()
 		a, _ := strconv.Atoi(scanner.Text())
 		scanner.Scan()
 		b, _ := strconv.Atoi(scanner.Text())
-		writer.WriteString(strconv.Itoa(a+b))
-		writer.WriteString("\n")
-		writer.Flush()
+		fmt.Fprintf(writer, "%d\n", a + b)
 	}
+	writer.Flush()
 }
-*/
+
 /*
 //7
 func main() {
@@ -95,6 +95,7 @@ func main() {
 	}
 }
 */
+/*
 //2
 func main() {
 	var n1, n2 int
@@ -106,3 +107,4 @@ func main() {
 		}
 	}
 }
+*/
